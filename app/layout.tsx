@@ -1,8 +1,8 @@
-'use client'
-/* eslint-disable @typescript-eslint/no-unused-vars */
+'use client';
 import { useState, useEffect } from 'react'
 import { Inter } from 'next/font/google'
 import './globals.css'
+import Header from '../components/Header'; 
 
 //header and sidebar
 
@@ -24,6 +24,10 @@ export default function RootLayout({
       < body className={inter.className}>
         <div className='min-h-screen bg-gray-50 flex flex-col'>
           {/* header*/}
+          <Header
+           onMenuClick={()=>setSidebarOpen(!sidebarOpen)} 
+           totalEarnings={totalEarnings} 
+           />
              <div className='flex flex-1'>
               {/*Sidebar*/}
               <main className='flex-1 p-4 lg:p-8 ml-64 transition-all duration-300'>
